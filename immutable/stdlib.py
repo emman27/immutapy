@@ -65,3 +65,6 @@ class List(ImmutableObject, list):
         new_list = self.__class__(self._internal[:idx] + self._internal[idx + 1:])
         value = self._internal[idx]
         return (value, new_list)
+
+    def __contains__(self, item):
+        return item in self._internal

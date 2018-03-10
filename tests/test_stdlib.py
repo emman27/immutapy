@@ -104,3 +104,10 @@ def test_pop_zero():
     assert val == 1
     assert new_list == immutable.List([2, 3])
     assert lst == immutable.List([1, 2, 3])
+
+
+def test_in():
+    assert 1 in immutable.List([1, 2, 3])
+    assert immutable.List([1]) in immutable.List([
+        immutable.List([1])
+    ])
