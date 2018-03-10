@@ -21,3 +21,6 @@ class List(list):
 
     def __ne__(self, other):
         return not self.__eq__(other)
+
+    def __getitem__(self, idx):
+        return self._internal[idx]

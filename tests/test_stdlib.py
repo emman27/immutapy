@@ -35,3 +35,10 @@ def test_equality():
     assert immutable.List() == immutable.List()
     assert immutable.List([1, 2]) == immutable.List([1, 2])
     assert immutable.List() != []
+
+
+def test_index():
+    """
+    Can index and retrieve an item
+    """
+    assert immutable.List([1])[0] == 1
