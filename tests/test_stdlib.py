@@ -42,3 +42,11 @@ def test_index():
     Can index and retrieve an item
     """
     assert immutable.List([1])[0] == 1
+    assert immutable.List([1, 2])[-1] == 2
+
+
+def test_slice():
+    """
+    Can slice a list
+    """
+    assert immutable.List([1, 2, 3])[1:] == immutable.List([2, 3])

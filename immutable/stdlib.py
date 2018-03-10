@@ -22,5 +22,7 @@ class List(list):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def __getitem__(self, idx):
-        return self._internal[idx]
+    def __getitem__(self, key):
+        if isinstance(key, slice):
+            return self.__class__(self._internal[key])
+        return self._internal[key]
