@@ -5,6 +5,7 @@ Immutable.py - Immutable data structures for Python
     :target: https://travis-ci.org/emman27/immutablepy
 
 Installing
+
 .. code-block::
 
   pip install immutapy
