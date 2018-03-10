@@ -40,3 +40,26 @@ class List(ImmutableObject, list):
 
     def extend(self, iterable):
         return self.__class__(self._internal + iterable)
+
+    def pop(self, idx=-1):
+        """
+        Warning: This method behaves differently from the standard library's pop
+
+        This is due to the fact that the stdlib's pop actually achieves 2 things at once:
+            1. Returns the element at idx (or the last element if idx is not specified)
+            2. Removes that element from the list
+               (side-effect that should not happen in an immutable structure)
+
+        :args idx(int): The index to pop, defaults to the last item in the list
+        :returns (<T>, immutable.List): Returns a two-tuple of the item popped, as well as the
+            new list after popping. The original list remains unmodified
+
+        >>> item, new_list = immutable.List([1, 2, 3]).pop()
+        >>> item
+        3
+        >>> new_list
+        [1, 2]
+        """
+        new_list = self.__class__(self._internal[:idx] + self._internal[idx + 1:])
+        value = self._internal[idx]
+        return (value, new_list)

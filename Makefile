@@ -1,5 +1,5 @@
 test:
-	pipenv run pytest
+	pipenv run tox
 
 cover:
 	pipenv run pytest --cov=immutable

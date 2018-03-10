@@ -80,3 +80,11 @@ def test_repr():
 def test_set_raises_typeerror():
     with pytest.raises(TypeError):
         immutable.List([1, 2])[0] = 3
+
+
+def test_pop():
+    lst = immutable.List([1, 2, 3])
+    val, new_list = lst.pop(1)
+    assert val == 2
+    assert new_list == immutable.List([1, 3])
+    assert lst == immutable.List([1, 2, 3])
