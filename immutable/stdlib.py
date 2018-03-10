@@ -77,3 +77,8 @@ class List(ImmutableObject, list):
 
     def sort(self, key=None, reverse=False):
         return self.__class__(sorted(self._internal, key=key, reverse=reverse))
+
+    def insert(self, idx, elem):
+        new_list = copy.copy(self._internal)
+        new_list.insert(idx, elem)
+        return self.__class__(new_list)

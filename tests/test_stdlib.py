@@ -135,3 +135,17 @@ def test_count():
     im = immutable.List(lst)
     assert lst.count(1) == im.count(1)
     assert lst.count('a') == im.count('a')
+
+
+def test_insert_start_and_end():
+    im = immutable.List([])
+    new = im.insert(0, 'a')
+    assert im == immutable.List()
+    assert new == immutable.List(['a'])
+
+
+def test_insert_middle():
+    im = immutable.List([1, 2, 3, 4])
+    new = im.insert(1, 'b')
+    assert im == immutable.List([1, 2, 3, 4])
+    assert new == immutable.List([1, 'b', 2, 3, 4])
