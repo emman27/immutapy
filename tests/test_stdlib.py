@@ -96,3 +96,11 @@ def test_pop_default():
     assert val == 3
     assert new_list == immutable.List([1, 2])
     assert lst == immutable.List([1, 2, 3])
+
+
+def test_pop_zero():
+    lst = immutable.List([1, 2, 3])
+    val, new_list = lst.pop(0)
+    assert val == 1
+    assert new_list == immutable.List([2, 3])
+    assert lst == immutable.List([1, 2, 3])
