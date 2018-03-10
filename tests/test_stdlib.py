@@ -169,3 +169,8 @@ def test_remove():
     new = im.remove(2)
     assert im == immutable.List([1, 2, 3])
     assert new == immutable.List([1, 3])
+
+
+def test_index_fn():
+    im = immutable.List([1, 2, 3])
+    assert im.index(2) == 1

@@ -90,3 +90,6 @@ class List(ImmutableObject, list):
         new_list = copy.copy(self._internal)
         new_list.remove(val)
         return self.__class__(new_list)
+
+    def index(self, val):
+        return self._internal.index(val)
