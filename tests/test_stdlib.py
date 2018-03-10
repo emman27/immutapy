@@ -117,3 +117,14 @@ def test_sort():
     lst = immutable.List([3, 2, 1])
     assert lst.sort() == immutable.List([1, 2, 3])
     assert lst == immutable.List([3, 2, 1])
+
+
+def test_sort_with_key():
+    lst = immutable.List([1, 2, 3])
+    # Fake reverse sorting for integers!
+    assert lst.sort(key=lambda x: -x) == immutable.List([3, 2, 1])
+
+
+def test_sort_with_reverse():
+    lst = immutable.List([1, 2, 3])
+    assert lst.sort(reverse=True) == immutable.List([3, 2, 1])
