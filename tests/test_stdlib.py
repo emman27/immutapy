@@ -57,3 +57,20 @@ def test_str():
     Will print the list instead of <class List>
     """
     assert str(immutable.List([1, 2, 3])) == '[1, 2, 3]'
+
+
+def test_extend():
+    """
+    Can extend with a regular iterable
+    """
+    lst = immutable.List()
+    new = lst.extend([1, 2])
+    assert lst == immutable.List()
+    assert new == immutable.List([1, 2])
+
+
+def test_repr():
+    """
+    Should implement similar to list repr
+    """
+    assert immutable.List(['a', 1]).__repr__() == list(['a', 1]).__repr__()

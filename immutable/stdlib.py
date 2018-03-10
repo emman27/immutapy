@@ -29,3 +29,9 @@ class List(list):
 
     def __str__(self):
         return self._internal.__str__()
+
+    def __repr__(self):
+        return self._internal.__repr__()
+
+    def extend(self, iterable):
+        return self.__class__(self._internal + iterable)
