@@ -50,3 +50,10 @@ def test_slice():
     Can slice a list
     """
     assert immutable.List([1, 2, 3])[1:] == immutable.List([2, 3])
+
+
+def test_str():
+    """
+    Will print the list instead of <class List>
+    """
+    assert str(immutable.List([1, 2, 3])) == '[1, 2, 3]'
