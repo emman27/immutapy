@@ -30,6 +30,9 @@ class List(ImmutableObject, list):
         return self._internal[key]
 
     def __getslice__(self, start, end):
+        """
+        This method is only used by python2
+        """
         return self.__getitem__(slice(start, end))
 
     def __str__(self):
@@ -69,8 +72,8 @@ class List(ImmutableObject, list):
     def __contains__(self, item):
         return item in self._internal
 
-    def count(self):
-        return self._internal.count()
+    def count(self, obj):
+        return self._internal.count(obj)
 
     def sort(self, key=None, reverse=False):
         return self.__class__(sorted(self._internal, key=key, reverse=reverse))

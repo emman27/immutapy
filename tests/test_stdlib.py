@@ -128,3 +128,10 @@ def test_sort_with_key():
 def test_sort_with_reverse():
     lst = immutable.List([1, 2, 3])
     assert lst.sort(reverse=True) == immutable.List([3, 2, 1])
+
+
+def test_count():
+    lst = [1, 2, 3, 4]
+    im = immutable.List(lst)
+    assert lst.count(1) == im.count(1)
+    assert lst.count('a') == im.count('a')
