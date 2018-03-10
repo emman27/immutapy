@@ -111,3 +111,9 @@ def test_in():
     assert immutable.List([1]) in immutable.List([
         immutable.List([1])
     ])
+
+
+def test_sort():
+    lst = immutable.List([3, 2, 1])
+    assert lst.sort() == immutable.List([1, 2, 3])
+    assert lst == immutable.List([3, 2, 1])

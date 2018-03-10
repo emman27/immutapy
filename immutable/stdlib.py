@@ -68,3 +68,9 @@ class List(ImmutableObject, list):
 
     def __contains__(self, item):
         return item in self._internal
+
+    def count(self):
+        return self._internal.count()
+
+    def sort(self, key=None, reverse=False):
+        return self.__class__(sorted(self._internal, key=key, reverse=reverse))
