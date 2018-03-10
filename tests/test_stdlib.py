@@ -149,3 +149,16 @@ def test_insert_middle():
     new = im.insert(1, 'b')
     assert im == immutable.List([1, 2, 3, 4])
     assert new == immutable.List([1, 'b', 2, 3, 4])
+
+
+def test_reverse():
+    im = immutable.List([1, 2, 3])
+    new = im.reverse()
+    assert im == immutable.List([1, 2, 3])
+    assert new == immutable.List([3, 2, 1])
+
+
+def test_reverse_slice():
+    im = immutable.List([1, 2, 3])
+    sl = im[::-1]
+    assert sl == immutable.List([3, 2, 1])

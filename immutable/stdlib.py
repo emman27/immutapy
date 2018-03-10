@@ -82,3 +82,6 @@ class List(ImmutableObject, list):
         new_list = copy.copy(self._internal)
         new_list.insert(idx, elem)
         return self.__class__(new_list)
+
+    def reverse(self):
+        return self.__class__(self._internal[::-1])
