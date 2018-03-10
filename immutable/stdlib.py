@@ -85,3 +85,8 @@ class List(ImmutableObject, list):
 
     def reverse(self):
         return self.__class__(self._internal[::-1])
+
+    def remove(self, val):
+        new_list = copy.copy(self._internal)
+        new_list.remove(val)
+        return self.__class__(new_list)

@@ -162,3 +162,10 @@ def test_reverse_slice():
     im = immutable.List([1, 2, 3])
     sl = im[::-1]
     assert sl == immutable.List([3, 2, 1])
+
+
+def test_remove():
+    im = immutable.List([1, 2, 3])
+    new = im.remove(2)
+    assert im == immutable.List([1, 2, 3])
+    assert new == immutable.List([1, 3])
