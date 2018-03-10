@@ -12,3 +12,6 @@ class List(list):
 
     def __init__(self, iterable=[]):
         self._internal = copy.deepcopy(iterable)
+
+    def append(self, new_item):
+        return self.__class__(self._internal + [new_item])
