@@ -60,6 +60,8 @@ class List(ImmutableObject, list):
         >>> new_list
         [1, 2]
         """
+        if idx == -1:
+            idx = len(self._internal) - 1
         new_list = self.__class__(self._internal[:idx] + self._internal[idx + 1:])
         value = self._internal[idx]
         return (value, new_list)
