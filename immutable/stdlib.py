@@ -4,8 +4,10 @@ Namely lists, dicts and tuples
 """
 import copy
 
+from .base import ImmutableObject
 
-class List(list):
+
+class List(ImmutableObject, list):
     """
     Replaces the list structure in the standard library
     """

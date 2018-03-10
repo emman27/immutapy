@@ -1,4 +1,5 @@
 import immutable
+import pytest
 
 
 def test_empty_list_creation():
@@ -74,3 +75,8 @@ def test_repr():
     Should implement similar to list repr
     """
     assert immutable.List(['a', 1]).__repr__() == list(['a', 1]).__repr__()
+
+
+def test_set_raises_typeerror():
+    with pytest.raises(TypeError):
+        immutable.List([1, 2])[0] = 3
