@@ -7,6 +7,7 @@ name = "pypi"
 
 [packages]
 
+pytest-cov = "*"
 
 
 [dev-packages]
@@ -16,6 +17,7 @@ twine = "*"
 "flake8" = "*"
 tox = "*"
 pytest = "*"
+coverage = "*"
 
 
 [requires]
