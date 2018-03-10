@@ -29,6 +29,9 @@ class List(ImmutableObject, list):
             return self.__class__(self._internal[key])
         return self._internal[key]
 
+    def __getslice__(self, start, end):
+        return self.__getitem__(slice(start, end))
+
     def __str__(self):
         return self._internal.__str__()
 
