@@ -7,9 +7,12 @@ import copy
 from .base import ImmutableObject
 
 
-class List(ImmutableObject, list):
+class List(ImmutableObject):
     """
     Replaces the list structure in the standard library
+
+    In Python 3, should inherit from collections.Collection
+    Unfortunately this doesn't exist in Python 2 so is left out (?)
     """
 
     def __init__(self, iterable=[]):
@@ -93,3 +96,10 @@ class List(ImmutableObject, list):
 
     def index(self, val):
         return self._internal.index(val)
+
+    def __iter__(self):
+        for item in self._internal:
+            yield item
+
+    def __len__(self):
+        return len(self._internal)

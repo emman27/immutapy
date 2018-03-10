@@ -174,3 +174,11 @@ def test_remove():
 def test_index_fn():
     im = immutable.List([1, 2, 3])
     assert im.index(2) == 1
+
+
+def test_iterable():
+    """
+    Must be a valid iterable
+    """
+    im = immutable.List([0, 1, 2])
+    assert [val for val in im] == [0, 1, 2]
