@@ -5,9 +5,10 @@ Immutable.py - Immutable data structures for Python
     :target: https://travis-ci.org/emman27/immutablepy
 
 Installing
-```
-pip install immutapy
-```
+.. code-block::
+
+  pip install immutapy
+
 
 Immutapy is a library adding immutable data structures to Python to replace many of the standard
 library data structures. This is inspired by immutable.js and caused by mutable data structures
