@@ -12,6 +12,10 @@ name = "pypi"
 [dev-packages]
 
 twine = "*"
+"autopep8" = "*"
+"flake8" = "*"
+tox = "*"
+pytest = "*"
 
 
 [requires]
