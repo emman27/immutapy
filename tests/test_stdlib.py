@@ -104,3 +104,81 @@ def test_pop_zero():
     assert val == 1
     assert new_list == immutable.List([2, 3])
     assert lst == immutable.List([1, 2, 3])
+
+
+def test_in():
+    assert 1 in immutable.List([1, 2, 3])
+    assert immutable.List([1]) in immutable.List([
+        immutable.List([1])
+    ])
+
+
+def test_sort():
+    lst = immutable.List([3, 2, 1])
+    assert lst.sort() == immutable.List([1, 2, 3])
+    assert lst == immutable.List([3, 2, 1])
+
+
+def test_sort_with_key():
+    lst = immutable.List([1, 2, 3])
+    # Fake reverse sorting for integers!
+    assert lst.sort(key=lambda x: -x) == immutable.List([3, 2, 1])
+
+
+def test_sort_with_reverse():
+    lst = immutable.List([1, 2, 3])
+    assert lst.sort(reverse=True) == immutable.List([3, 2, 1])
+
+
+def test_count():
+    lst = [1, 2, 3, 4]
+    im = immutable.List(lst)
+    assert lst.count(1) == im.count(1)
+    assert lst.count('a') == im.count('a')
+
+
+def test_insert_start_and_end():
+    im = immutable.List([])
+    new = im.insert(0, 'a')
+    assert im == immutable.List()
+    assert new == immutable.List(['a'])
+
+
+def test_insert_middle():
+    im = immutable.List([1, 2, 3, 4])
+    new = im.insert(1, 'b')
+    assert im == immutable.List([1, 2, 3, 4])
+    assert new == immutable.List([1, 'b', 2, 3, 4])
+
+
+def test_reverse():
+    im = immutable.List([1, 2, 3])
+    new = im.reverse()
+    assert im == immutable.List([1, 2, 3])
+    assert new == immutable.List([3, 2, 1])
+
+
+def test_reverse_slice():
+    im = immutable.List([1, 2, 3])
+    sl = im[::-1]
+    assert sl == immutable.List([3, 2, 1])
+
+
+def test_remove():
+    im = immutable.List([1, 2, 3])
+    new = im.remove(2)
+    assert im == immutable.List([1, 2, 3])
+    assert new == immutable.List([1, 3])
+
+
+def test_index_fn():
+    im = immutable.List([1, 2, 3])
+    assert im.index(2) == 1
+
+
+def test_iterable():
+    """
+    Must be a valid iterable
+    """
+    im = immutable.List([0, 1, 2])
+    assert [val for val in im] == [0, 1, 2]

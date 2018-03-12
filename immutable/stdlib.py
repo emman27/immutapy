@@ -7,9 +7,12 @@ import copy
 from .base import ImmutableObject
 
 
-class List(ImmutableObject, list):
+class List(ImmutableObject):
     """
     Replaces the list structure in the standard library
+
+    In Python 3, should inherit from collections.Collection
+    Unfortunately this doesn't exist in Python 2 so is left out (?)
     """
 
     def __init__(self, iterable=[]):
@@ -30,6 +33,9 @@ class List(ImmutableObject, list):
         return self._internal[key]
 
     def __getslice__(self, start, end):
+        """
+        This method is only used by python2
+        """
         return self.__getitem__(slice(start, end))
 
     def __str__(self):
@@ -65,3 +71,35 @@ class List(ImmutableObject, list):
         new_list = self.__class__(self._internal[:idx] + self._internal[idx + 1:])
         value = self._internal[idx]
         return (value, new_list)
+
+    def __contains__(self, item):
+        return item in self._internal
+
+    def count(self, obj):
+        return self._internal.count(obj)
+
+    def sort(self, key=None, reverse=False):
+        return self.__class__(sorted(self._internal, key=key, reverse=reverse))
+
+    def insert(self, idx, elem):
+        new_list = copy.copy(self._internal)
+        new_list.insert(idx, elem)
+        return self.__class__(new_list)
+
+    def reverse(self):
+        return self.__class__(self._internal[::-1])
+
+    def remove(self, val):
+        new_list = copy.copy(self._internal)
+        new_list.remove(val)
+        return self.__class__(new_list)
+
+    def index(self, val):
+        return self._internal.index(val)
+
+    def __iter__(self):
+        for item in self._internal:
+            yield item
+
+    def __len__(self):
+        return len(self._internal)
