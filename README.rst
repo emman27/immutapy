@@ -1,11 +1,11 @@
 Immutapy - Immutable data structures for Python
-===================================================
+===============================================
 
-.. image:: https://travis-ci.org/emman27/immutablepy.svg?branch=master
-    :target: https://travis-ci.org/emman27/immutablepy
+.. image:: https://travis-ci.org/emman27/immutapy.svg?branch=master
+    :target: https://travis-ci.org/emman27/immutapy
 
-.. image:: https://api.codacy.com/project/badge/Grade/a547e928fd994048aa9b63686b0557af
-    :target: https://www.codacy.com/app/eygohlolz/immutablepy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=emman27/immutablepy&amp;utm_campaign=Badge_Grade
+.. image:: https://api.codacy.com/project/badge/Grade/5ccc6d4e7cf94c2ba1d7e24759852ae7
+    :target: https://www.codacy.com/app/eygohlolz/immutapy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=emman27/immutapy&amp;utm_campaign=Badge_Grade
 
 Immutapy is a library adding immutable data structures to Python to replace many of the standard
 library data structures. This is inspired by immutable.js and caused by mutable data structures
