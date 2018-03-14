@@ -103,3 +103,21 @@ class List(ImmutableObject):
 
     def __len__(self):
         return len(self._internal)
+
+
+class Dict(ImmutableObject):
+    """
+    Replaces the dict in the standard library
+    """
+
+    def __init__(self, iter=None):
+        self._internal = {}
+        if iter:
+            for key, value in iter.items():
+                self._internal[key] = value
+
+    def __str__(self):
+        return str(self._internal)
+
+    def __repr__(self):
+        return self._internal.__repr__()
