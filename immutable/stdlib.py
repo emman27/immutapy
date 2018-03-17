@@ -121,3 +121,6 @@ class Dict(ImmutableObject):
 
     def __repr__(self):
         return self._internal.__repr__()
+
+    def __getitem__(self, key):
+        return self._internal[key]
