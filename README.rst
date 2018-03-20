@@ -39,7 +39,7 @@ Features
 * ☐ Standard Library
 
   * ☑ List (Somewhat)
-  * ☐ Dict
+  * ☑ Dict
   * ☐ Set
 * ☐ collections
 * ☐ numpy
