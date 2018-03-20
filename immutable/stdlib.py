@@ -103,3 +103,52 @@ class List(ImmutableObject):
 
     def __len__(self):
         return len(self._internal)
+
+
+class Dict(ImmutableObject):
+    """
+    Replaces the dict in the standard library
+    """
+
+    def __init__(self, iter=None):
+        self._internal = {}
+        if iter:
+            for key, value in iter.items():
+                self._internal[key] = value
+
+    def __str__(self):
+        return str(self._internal)
+
+    def __repr__(self):
+        return self._internal.__repr__()
+
+    def __getitem__(self, key):
+        return self._internal[key]
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self._internal == other._internal
+
+    def pop(self, key):
+        new = copy.copy(self._internal)
+        popped = self._internal.pop(key)
+        return popped, self.__class__(self._internal)
+
+    def keys(self):
+        return self._internal.keys()
+
+    def values(self):
+        return self._internal.values()
+
+    def items(self):
+        return self._internal.items()
+
+    def update(self, other):
+        new = copy.copy(self._internal)
+        new.update(other)
+        return self.__class__(new)
+
+    def get(self, key, default=None):
+        return self._internal.get(key, default)
+
+    def __iter__(self):
+        return self._internal.__iter__()

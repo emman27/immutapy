@@ -39,7 +39,25 @@ Features
 * ☐ Standard Library
 
   * ☑ List (Somewhat)
-  * ☐ Dict
+  * ☑ Dict
   * ☐ Set
 * ☐ collections
 * ☐ numpy
+
+Performance Comparison
+----------------------
+
+Note that immutable structures tend to have a performance overhead.
+Differences are highlighted in the table below.
+
+Trivia: Python's standard library uses arrays to back lists.
+See https://wiki.python.org/moin/TimeComplexity
+
+==========  ========  =======================
+Operation   List      immutable.List
+lst.append  O(1)      O(n)
+lst.pop()   O(1)      O(n)
+lst.pop(i)  O(i)      O(n)
+lst.extend  O(k)      O(n+k)
+delete      O(n)      Not possible (immutable)
+==========  ========  ========================
