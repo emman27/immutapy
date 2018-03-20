@@ -146,3 +146,6 @@ class Dict(ImmutableObject):
         new = copy.copy(self._internal)
         new.update(other)
         return self.__class__(new)
+
+    def get(self, key, default=None):
+        return self._internal.get(key, default)

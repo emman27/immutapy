@@ -63,3 +63,11 @@ def test_update():
     e = d.update({'b': 3})
     assert d == Dict()
     assert e == Dict({'b': 3})
+
+
+def test_get():
+    d = Dict({'a': 1})
+    assert d.get('a') == 1
+    assert d.get('a', 23) == 1
+    assert d.get('b') is None
+    assert d.get('b', 44) == 44
