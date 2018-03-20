@@ -23,3 +23,11 @@ def test_equality():
     assert Dict() == Dict()
     assert Dict({'a': 1}) == Dict({'a': 1})
     assert Dict() != Dict({'a': 1})
+
+
+def test_ne():
+    """
+    Tests non-equality
+    """
+    assert Dict() != Dict({'a': 2})
+    assert {} != Dict()
