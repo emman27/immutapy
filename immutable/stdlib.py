@@ -127,3 +127,8 @@ class Dict(ImmutableObject):
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and self._internal == other._internal
+
+    def pop(self, key):
+        new = copy.copy(self._internal)
+        popped = self._internal.pop(key)
+        return popped, self.__class__(self._internal)

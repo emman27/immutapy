@@ -31,3 +31,13 @@ def test_ne():
     """
     assert Dict() != Dict({'a': 2})
     assert {} != Dict()
+
+
+def test_pop():
+    """
+    Tests on popping
+    """
+    d = Dict({'a': 1})
+    popped, e = d.pop('a')
+    assert popped == 1
+    assert e == Dict()
