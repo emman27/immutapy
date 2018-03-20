@@ -141,3 +141,8 @@ class Dict(ImmutableObject):
 
     def items(self):
         return self._internal.items()
+
+    def update(self, other):
+        new = copy.copy(self._internal)
+        new.update(other)
+        return self.__class__(new)

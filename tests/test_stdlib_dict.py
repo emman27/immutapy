@@ -56,3 +56,10 @@ def test_values():
 def items():
     o = {'a': 23, 'b': 3}
     assert Dict(o).items() == o.items()
+
+
+def test_update():
+    d = Dict()
+    e = d.update({'b': 3})
+    assert d == Dict()
+    assert e == Dict({'b': 3})
