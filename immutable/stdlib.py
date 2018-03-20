@@ -149,3 +149,6 @@ class Dict(ImmutableObject):
 
     def get(self, key, default=None):
         return self._internal.get(key, default)
+
+    def __iter__(self):
+        return self._internal.__iter__()

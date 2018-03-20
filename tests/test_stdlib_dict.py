@@ -71,3 +71,15 @@ def test_get():
     assert d.get('a', 23) == 1
     assert d.get('b') is None
     assert d.get('b', 44) == 44
+
+
+def test_iter():
+    o = {'a': 1, 'b': 2}
+    d = Dict(o)
+    lst_o = []
+    lst_d = []
+    for key in d:
+        lst_d.append(key)
+    for key in o:
+        lst_o.append(key)
+    assert sorted(lst_d) == sorted(lst_o)
