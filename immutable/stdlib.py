@@ -132,3 +132,12 @@ class Dict(ImmutableObject):
         new = copy.copy(self._internal)
         popped = self._internal.pop(key)
         return popped, self.__class__(self._internal)
+
+    def keys(self):
+        return self._internal.keys()
+
+    def values(self):
+        return self._internal.values()
+
+    def items(self):
+        return self._internal.items()

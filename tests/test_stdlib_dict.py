@@ -41,3 +41,18 @@ def test_pop():
     popped, e = d.pop('a')
     assert popped == 1
     assert e == Dict()
+
+
+def test_keys():
+    o = {'a': 23, 'b': 3}
+    assert Dict(o).keys() == o.keys()
+
+
+def test_values():
+    o = {'a': 23, 'b': 3}
+    assert sorted(Dict(o).values()) == sorted(o.values())
+
+
+def items():
+    o = {'a': 23, 'b': 3}
+    assert Dict(o).items() == o.items()
