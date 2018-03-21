@@ -14,3 +14,7 @@ def test_init():
 def test__eq():
     return Set({1, 2, 3}) == Set({3, 2, 1})
     return Set({}) == Set()
+
+
+def test__ne():
+    return Set({1, 2}) != Set({1})
