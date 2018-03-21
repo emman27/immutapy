@@ -152,3 +152,11 @@ class Dict(ImmutableObject):
 
     def __iter__(self):
         return self._internal.__iter__()
+
+
+class Set(ImmutableObject):
+    def __init__(self, iter=None):
+        self._internal = set()
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and other._internal == self._internal
