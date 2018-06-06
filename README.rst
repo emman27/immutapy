@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Femman27%2Fimmutapy.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Femman27%2Fimmutapy?ref=badge_shield)
+
 Immutapy - Immutable data structures for Python
 ===============================================
 
@@ -61,3 +63,7 @@ lst.pop(i)  O(i)      O(n)
 lst.extend  O(k)      O(n+k)
 delete      O(n)      Not possible (immutable)
 ==========  ========  ========================
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Femman27%2Fimmutapy.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Femman27%2Fimmutapy?ref=badge_large)
